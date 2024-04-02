@@ -1,6 +1,12 @@
 # 华为推送golang服务端实现
 
-实现这个的包的目的是降低开发难度，而且官方的也不是一个标准的golang包，没法直接引用，所以一不做二不休就自己实现了一个基于api直接调用的包，代码复杂度低很多。
+实现这个的包的目的是降低开发难度，而且官方的也不是一个标准的golang包，没法直接引用。
+
+所以一不做二不休就自己实现了一个基于api直接调用的包，代码复杂度低很多。
+
+而且官方实现的包写得和屎💩一样
+
+
 
 ## 流程
 
@@ -8,7 +14,7 @@
 
 然后需要再app上进行jks加密，然后上传到华为的appGallery，sha256加密的key
 
-最后启动app 获取token就o了。
+最后启动app 获取token就ok了。
 
 ```golang
 package example
@@ -55,6 +61,9 @@ func Test(t *testing.T) {
 			},
 		},
 	}
+	//dataMap 中请完全参考官网文档：
+	//https://developer.huawei.com/consumer/cn/doc/HMSCore-Guides/rest-sample-code-0000001050040242
+	//
 	m, err := client.Push(dataMap)
 	if err != nil {
 		return
